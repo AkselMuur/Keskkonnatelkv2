@@ -2,6 +2,33 @@ import React from "react";
 import { Waves, Zap, Lightbulb, TreePine } from "lucide-react";
 
 function Topics() {
+  const topics = [
+    {
+      icon: <Waves />,
+      color: "blue",
+      title: "Läänemere Kaitse",
+      text: "Õpi hoolitsema Läänemere puhtuse ja ökosüsteemi tervise eest."
+    },
+    {
+      icon: <Zap />,
+      color: "yellow",
+      title: "Energia Säästmine",
+      text: "Avasta praktilisi võimalusi energia säästmiseks igapäevaelus."
+    },
+    {
+      icon: <Lightbulb />,
+      color: "orange",
+      title: "Alternatiivenergia",
+      text: "Tutvuge taastuvate energiaallikatega ja nende eelistega."
+    },
+    {
+      icon: <TreePine />,
+      color: "green",
+      title: "Jätkusuutlik Areng",
+      text: "Mõista, kuidas elada loodusega kooskõlas parema tuleviku nimel."
+    }
+  ];
+
   return (
     <section id="teemad" className="section bg-white">
       <div className="container">
@@ -14,43 +41,18 @@ function Topics() {
         </div>
 
         <div className="grid-two topic-grid">
-
-          <div className="topic">
-            <div className="topic-icon blue"><Waves /></div>
-            <div>
-              <h3>Läänemere Kaitse</h3>
-              <p>Õpi hoolitsema Läänemere puhtuse ja ökosüsteemi tervise eest.</p>
+          {topics.map((t, i) => (
+            <div className="topic" key={i}>
+              <div className={`topic-icon ${t.color}`}>{t.icon}</div>
+              <div>
+                <h3>{t.title}</h3>
+                <p>{t.text}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="topic">
-            <div className="topic-icon yellow"><Zap /></div>
-            <div>
-              <h3>Energia Säästmine</h3>
-              <p>Avasta praktilisi võimalusi energia säästmiseks igapäevaelus.</p>
-            </div>
-          </div>
-
-          <div className="topic">
-            <div className="topic-icon orange"><Lightbulb /></div>
-            <div>
-              <h3>Alternatiivenergia</h3>
-              <p>Tutvuge taastuvate energiaallikatega ja nende eelistega.</p>
-            </div>
-          </div>
-
-          <div className="topic">
-            <div className="topic-icon green"><TreePine /></div>
-            <div>
-              <h3>Jätkusuutlik Areng</h3>
-              <p>Mõista, kuidas elada loodusega kooskõlas parema tuleviku nimel.</p>
-            </div>
-          </div>
-
+          ))}
         </div>
 
         <div className="two-columns">
-
           <div>
             <h3 className="section-subtitle">Keskkonnasõbralik Eluviis</h3>
             <p className="muted">
@@ -64,7 +66,6 @@ function Topics() {
               alt="Läänemere loodus"
             />
           </div>
-
         </div>
 
       </div>

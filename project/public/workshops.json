@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Tuuliku Meisterdamine",
+    "description": "Kavanda ja valmista oma värvikas tuulik.",
+    "img": "https://images.unsplash.com/photo-1762549957421-179ed3aed898?q=80&w=1080&auto=format&fit=crop"
+  },
+  {
+    "id": 2,
+    "title": "Põletustempel",
+    "description": "Loo ainulaadseid puittemplit traditsiooniliste puupõletustehnikate abil.",
+    "img": "https://images.unsplash.com/photo-1759142761123-9ab45592b5f6?q=80&w=1080&auto=format&fit=crop"
+  },
+  {
+    "id": 3,
+    "title": "Looduse Meeleline Kogemine",
+    "description": "Testi end looduse kogemisel ja mõistmisel läbi kõigi oma meelte.",
+    "img": "https://images.unsplash.com/photo-1656857143191-4ec39c1d4771?q=80&w=1080&auto=format&fit=crop"
+  }
+]

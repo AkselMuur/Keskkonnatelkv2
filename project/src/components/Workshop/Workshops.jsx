@@ -5,54 +5,11 @@ function Workshops() {
   const [workshops, setWorkshops] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/photos?_limit=3")
+    fetch("/veebiarendus/Keskonnatelk/workshops.json")
       .then((res) => res.json())
-      .then((data) => {
-        const transformed = data.map((d, i) => ({
-          id: d.id,
-
-          title: [
-            "Tuuliku Meisterdamine",
-            "Põletustempel",
-            "Looduse Meeleline Kogemine",
-          ][i],
-
-          description: [
-            "Kavanda ja valmista oma värvikas tuulik.",
-            "Loo ainulaadseid puittemplit traditsiooniliste puupõletustehnikate abil.",
-            "Testi end looduse kogemisel ja mõistmisel läbi kõigi oma meelte.",
-          ][i],
-
-          img: [
-            "https://images.unsplash.com/photo-1762549957421-179ed3aed898?q=80&w=1080&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1759142761123-9ab45592b5f6?q=80&w=1080&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1656857143191-4ec39c1d4771?q=80&w=1080&auto=format&fit=crop",
-          ][i],
-        }));
-
-        setWorkshops(transformed);
-      })
-      .catch(() => {
-        setWorkshops([
-          {
-            id: 1,
-            title: "Tuuliku Meisterdamine",
-            description: "Kavanda ja valmista oma värvikas tuulik.",
-            img: "https://images.unsplash.com/photo-1762549957421-179ed3aed898?q=80&w=1080&auto=format&fit=crop",
-          },
-          {
-            id: 2,
-            title: "Põletustempel",
-            description: "Loo ainulaadseid puittemplit.",
-            img: "https://images.unsplash.com/photo-1759142761123-9ab45592b5f6?q=80&w=1080&auto=format&fit=crop",
-          },
-          {
-            id: 3,
-            title: "Looduse Meeleline Kogemine",
-            description: "Testi end looduse kogemisel.",
-            img: "https://images.unsplash.com/photo-1656857143191-4ec39c1d4771?q=80&w=1080&auto=format&fit=crop",
-          },
-        ]);
+      .then((data) => setWorkshops(data))
+      .catch((err) => {
+        console.error("JSON load error:", err);
       });
   }, []);
 
@@ -64,8 +21,7 @@ function Workshops() {
         <div className="center">
           <h2>Meie Töötoad</h2>
           <p className="sub">
-            Osale praktilistes tegevustes, mis ühendavad loovust ja
-            keskkonnateadlikkust
+            Osale praktilistes tegevustes, mis ühendavad loovust ja keskkonnateadlikkust
           </p>
         </div>
 
