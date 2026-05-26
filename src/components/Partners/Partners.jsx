@@ -17,21 +17,25 @@ const partners = [
 function Partners() {
   return (
     <section className="partnerid">
-      <div className="partnerid-heading">
-        <h2>Meie Partnerid</h2>
-        <p>Järgmised organisatsioonid ja ettevõtted osalevad sellel aastal keskkonnatelgis</p>
-      </div>
+      <div className="container">   {/* ← SEE ON LISATUD */}
 
-      <ul className="partner-list">
-        {partners.map((p, i) => (
-          <li key={i}>
-            <a className="partner-box" href={p.href} target="_blank" rel="noreferrer">
-              <span className="name">{p.name}</span>
-              <span className="url">{p.url}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+        <div className="partnerid-heading">
+          <h2>Meie Partnerid</h2>
+          <p>Järgmised organisatsioonid ja ettevõtted osalevad sellel aastal keskkonnatelgis</p>
+        </div>
+
+        <ul className="partner-list">
+          {partners.map((p, i) => (
+            <li key={i}>
+              <a className="partner-box" href={p.href} target="_blank" rel="noreferrer">
+                <span className="name">{p.name}</span>
+                <span className="url">{p.url}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+      </div>
     </section>
   );
 }

@@ -4,14 +4,15 @@ import { Wind, Feather, Eye } from "lucide-react";
 function Workshops() {
   const [workshops, setWorkshops] = useState([]);
 
-  useEffect(() => {
-    fetch("/veebiarendus/Keskkonnatelkv2/project/workshops.json")
-      .then((res) => res.json())
-      .then((data) => setWorkshops(data))
-      .catch((err) => {
-        console.error("JSON load error:", err);
-      });
-  }, []);
+ useEffect(() => {
+  fetch("/data/workshops.json")
+    .then((res) => res.json())
+    .then((data) => setWorkshops(data))
+    .catch((err) => {
+      console.error("JSON load error:", err);
+    });
+}, []);
+
 
   const icons = [<Wind />, <Feather />, <Eye />];
 

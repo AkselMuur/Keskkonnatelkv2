@@ -1,0 +1,8 @@
+[
+  { "date": "14. juuni", "place": "Puhta Vee Teemapark Metsamõisa Talu", "time": "14-19", "done": false },
+  { "date": "25.-27. juuni", "place": "Puhta Vee Teemapark Metsamõisa Talu", "time": "12-16", "done": false },
+  { "date": "28.-29. juuni", "place": "Puhta Vee Teemapark Metsamõisa Talu", "time": "9-12", "done": true },
+  { "date": "3. august", "place": "Valgejõe Külapäev", "time": "12-16", "done": false },
+  { "date": "10. august", "place": "Lauritsapäev (Kuusalu alevik)", "time": "12-16", "done": true },
+  { "date": "18. august", "place": "Järsi, Vajangu ja Türje Külapäev", "time": "12-16", "done": false }
+]

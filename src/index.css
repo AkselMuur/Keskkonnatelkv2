@@ -1,12 +1,41 @@
 :root {
   --green-700: #15803d;
   --green-100: #dcfce7;
+
   --muted: #6b7280;
   --card-border: #e6e6e6;
+
   --sidebar-width: 260px;
   --max-width: 1400px;
   --header-height: 68px;
+
+  --hero-overlay: rgba(0, 100, 50, 0.45);
+
+  /* Light mode värvid */
+  --bg-main: #ffffff;
+  --bg-card: #f8fafc;
+  --bg-alt: #f3f4f6;
+
+  --text-main: #111827;
+  --text-muted: #6b7280;
 }
+
+body.dark {
+  --bg-main: #0f172a;      /* põhitaust */
+  --bg-card: #1e293b;      /* kaardid */
+  --bg-alt: #162033;       /* sidebar / sektsioonid */
+  --bg-sidebar: #111827;
+  --text-main: #e2e8f0;    /* põhitekst */
+  --text-muted: #94a3b8;   /* pehmem tekst */
+
+  --card-border: #334155;  /* tumedam border */
+
+  --hero-overlay: rgba(0, 100, 50, 0.35); /* tumedam overlay */
+}
+
+
+
+
 /* Reset */
 * {
   box-sizing: border-box;
@@ -17,9 +46,14 @@ html,
 body {
   height: 100%;
   font-family: Inter, Arial, sans-serif;
-  color: #111827;
+  color: var(--text-main);
+  background: var(--bg-main);
   -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
+
+
 
 /* Page layout */
 .header {
@@ -59,8 +93,9 @@ body {
   height: 28px;
 }
 main {
-  padding-left: 280px; /* sidebar width */
+  padding-left: var(--sidebar-width);
 }
+
 /* Nav */
 .nav {
   display: flex;
@@ -94,29 +129,18 @@ main {
   color: rgb(223, 249, 217);
 }
 
-/* Mobile menu button */
-.mobile-menu {
-  display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-}
-.mobile-menu i {
-  width: 22px;
-  height: 22px;
-}
+
 
 /* Sidebar */
 .sidebar {
   position: fixed;
   left: 0;
-  top: var(--header-height);
+  top: 0;
   width: var(--sidebar-width);
-  height: calc(100vh - var(--header-height));
-  background: #f8faf9;
+  height: 100vh;
+  background: var(--bg-sidebar, #f8faf9);
   padding: 20px;
-  border-right: 1px solid #eaeaea;
+  border-right: none;
   overflow-y: auto;
   transform: translateX(0);
   transition: transform 0.28s ease;
@@ -156,9 +180,8 @@ main {
   font-size: 0.95rem;
 }
 
-/* Hero / intro */
 .algus {
-  margin-top: var(--header-height);
+  margin-top: 0;
   height: 460px;
   background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee")
     center/cover no-repeat;
@@ -169,11 +192,12 @@ main {
   text-align: center;
   color: #fff;
 }
+
 .algus::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 100, 50, 0.45);
+  background: var(--hero-overlay);
 }
 .algus-content {
   position: relative;
@@ -192,8 +216,9 @@ main {
 
 /* Sections */
 .section {
-  padding: 48px 0;
-  background: linear-gradient(180deg, #fff 0%, #fff 100%);
+padding: 48px 0;
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 .center {
   text-align: center;
@@ -248,7 +273,7 @@ main {
 
 /* Cards */
 .card {
-  background: #fff;
+    background: var(--bg-card, #fff);
   border: 1px solid var(--card-border);
   border-radius: 10px;
   padding: 14px;
@@ -356,14 +381,22 @@ main {
   display: block;
 }
 
-/* Partners */
 .partnerid {
-  padding: 32px 16px;
-  background: transparent;
-  overflow: hidden;
+  width: 100%;
+  padding: 48px 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+
+.partnerid .container {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 16px;
 }
+
+
+
 .partnerid-heading {
   text-align: center;
   margin-bottom: 18px;
@@ -387,16 +420,17 @@ main {
   justify-content: center;
   min-height: 140px;
   padding: 14px;
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--card-border);
   text-decoration: none;
-  color: #111;
+  color: var(--text-main);
   transition: transform 0.18s ease;
 }
+
 .partner-box:hover {
+  background: var(--bg-card);
   transform: translateY(-6px);
-  background: #f3f4f6;
 }
 .partner-box .name {
   font-weight: 600;
@@ -412,11 +446,17 @@ main {
   text-overflow: ellipsis;
 }
 
-/* Contact */
 .contact-section {
   padding: 64px 16px 80px;
-  background: linear-gradient(to bottom, #fff, #f0fdf4);
+  background: linear-gradient(
+    to bottom,
+    var(--bg-main) 0%,
+    var(--bg-main) 100%
+  );
+  color: var(--text-main);
 }
+
+
 .contact-container {
   max-width: 820px;
   margin: 0 auto;
@@ -490,19 +530,26 @@ main {
 .contact-result {
   margin-top: 12px;
 }
-
-/* Footer */
+.dark-toggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-main);
+  --hero-overlay: rgba(0, 0, 0, 0.55);
+}
 .footer {
   position: relative;
   background: linear-gradient(135deg, #0f1722, #0b1220);
-  color: #d1d5db;
+  color: var(--text-main);
   padding: 50px 20px 25px;
-  margin-top: 40px;
-  margin-left: 250px;
-  width: calc(100% - 250px);
+  margin-top: 0;
+  width: 100%;          /* ← alati täislaius */
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
 }
+
+
 .footer::before {
   content: "";
   position: absolute;
@@ -523,7 +570,7 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
-  gap: 40px;
+  gap: 0;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -579,77 +626,102 @@ main {
   padding-top: 15px;
 }
 /* Responsive */
+/* ============================
+   DESKTOP (sidebar nähtav)
+   ============================ */
+@media (min-width: 1025px) {
+  main {
+    padding-left: var(--sidebar-width);
+    margin-left: 0;
+  }
+
+  .footer {
+    padding-left: var(--sidebar-width); /* JOONDAB SAMA JOONEGA MIS MAIN */
+    margin-left: 0;                     /* EI NIHUTA FOOTERIT */
+    width: 100%;                        /* FOOTER TÄISLAIUSES */
+  }
+}
+
+@media (min-width: 1025px) {
+  .footer-container {
+    padding-left: var(--sidebar-width);
+  }
+}
+/* ============================
+   TABLET / SMALL DESKTOP
+   (sidebar peidus)
+   ============================ */
 @media (max-width: 1024px) {
   main {
     margin-left: 0;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
+
+ @media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-110%);
+    position: fixed;
+    top: 0; /* ← sidebar algab nüüd täiesti ülevalt */
+    left: 0;
+    height: 100vh; /* ← sidebar täiskõrgus */
+    width: var(--sidebar-width);
+    z-index: 2500;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+
+  .nav {
+    display: none;
+  }
+
+
   .partner-list li {
     flex: 1 1 calc(50% - 16px);
     max-width: calc(50% - 16px);
   }
+
   .grid-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-  .footer-container {
-    max-width: 500px;
-    padding-left: 100px;
-  }
-  .nav {
-    display: none;
-  }
-  .mobile-menu {
-    display: block;
-  }
-  .sidebar {
-    transform: translateX(-110%);
-    position: fixed;
-    z-index: 1200;
-  }
-  .algus {
-    margin-top: 0;
-  }
-  .partnerid {
-    padding-left: 0;
-    margin: 0 30px;
-  }
-  .sidebar.open {
-    transform: translateX(0);
-  }
+
   .footer {
     margin-left: 0;
     width: 100%;
   }
-}
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-  .mobile-menu {
-    display: block;
-  }
-  .sidebar {
-    transform: translateX(-110%);
-    position: fixed;
-    z-index: 1200;
-  }
-  .sidebar.open {
-    transform: translateX(0);
-  }
 
+  .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+}
+
+/* ============================
+   MOBILE
+   ============================ */
+@media (max-width: 768px) {
   main {
     margin-left: 0;
-    padding-top: calc(var(--header-height) + 20px);
+    padding-top: 0;
   }
+
   .grid-three,
   .grid-two,
   .grid-cards {
     grid-template-columns: 1fr;
   }
+
   .partner-list li {
     flex: 1 1 100%;
     max-width: 100%;
   }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -657,11 +729,70 @@ main {
   .footer-container {
     gap: 25px;
   }
+
   .footer-col {
     min-width: 100%;
   }
 }
-.done {
-  color: #15803d;
-  font-weight: 700;
+
+
+
+
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 5000;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.top-row {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* vahe nuppude vahel */
+  margin-bottom: 12px;
+}
+
+
+.top-row .sidebar-link {
+  flex: 0 0 auto;   /* nupp on täpselt nii lai kui vaja */
+  white-space: nowrap; /* ei murdu mitmele reale */
+}
+
+.top-row .dark-toggle {
+  margin-left: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+body.dark .topic {
+  background: var(--bg-card);       /* tume kaardi taust */
+  border-color: var(--card-border); /* tume border */
+  color: var(--text-main);          /* tume režiimi tekst */
+}
+
+body.dark .contact-form {
+  background: var(--bg-card);          /* tume kaardi taust */
+  border: 1px solid var(--card-border); /* tume border */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* tugevam vari */
+  color: var(--text-main);             /* heledam tekst */
+}
+
+body.dark .form-group label {
+  color: var(--text-main); /* hele tekst tumedas režiimis */
 }

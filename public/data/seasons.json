@@ -1,0 +1,27 @@
+[
+  {
+    "id": 17,
+    "season": "17. hooaeg",
+    "year": "2026",
+    "events": [
+      { "date": "14. juuni", "place": "Puhta Vee Teemapark", "time": "14-19", "done": false },
+      { "date": "25.-27. juuni", "place": "Puhta Vee Teemapark", "time": "12-16", "done": false }
+    ],
+    "workshops": [
+      { "title": "Tuuleenergia töötuba", "description": "Õpid tuule jõudu kasutama", "img": "/img/wind.jpg" },
+      { "title": "Linnuvaatluse töötuba", "description": "Õpid loodust märkama", "img": "/img/birds.jpg" }
+    ]
+  },
+
+  {
+    "id": 16,
+    "season": "16. hooaeg",
+    "year": "2025",
+    "events": [
+      { "date": "3. august", "place": "Valgejõe Külapäev", "time": "12-16", "done": false }
+    ],
+    "workshops": [
+      { "title": "Metsaraja töötuba", "description": "Õpid looduses liikuma", "img": "/img/forest.jpg" }
+    ]
+  }
+]
