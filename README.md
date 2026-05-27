@@ -1,16 +1,96 @@
-# React + Vite
+# Keskkonnatelk – Environmental Awareness Website  
+A modern, accessible and mobile‑friendly website built for *Keskkonnatelk*, an Estonian environmental education initiative.  
+The project focuses on clean UI, structured content, and a lightweight tech stack suitable for long‑term maintainability.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🌱 Project Overview
+Keskkonnatelk is an informational website designed to introduce visitors to environmental topics, sustainable practices and educational activities.  
+The goal of the project was to modernize the existing site, improve usability, and create a structure that is easy to update in the future.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This version includes:
+- A refreshed layout  
+- Clear content hierarchy  
+- Mobile‑first responsive design  
+- Improved accessibility  
+- Cleaner code and simplified structure  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- **HTML5** – semantic structure  
+- **CSS3** – responsive layout, modern styling  
+- **JavaScript** – interactive elements (navigation, toggles)  
+- **GitHub Pages** – hosting  
+- **VS Code** – development environment  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎯 Features
+- **Fully responsive design**  
+  Works smoothly on mobile, tablet and desktop.
+
+- **Clean and accessible UI**  
+  WCAG‑friendly colors, readable typography, keyboard‑friendly navigation.
+
+- **Simple content structure**  
+  Easy to maintain and extend.
+
+- **Lightweight and fast**  
+  No heavy frameworks, minimal dependencies.
+
+---
+
+## 📁 Project Structure
+```
+/assets
+   /images
+   /icons
+/css
+   style.css
+/js
+   script.js
+index.html
+README.md
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/USERNAME/keskkonnatelk.git
+```
+
+### 2. Open the project
+Open `index.html` in your browser or use a local development server.
+
+### 3. Deploy (optional)
+If using GitHub Pages:
+- Go to **Settings → Pages**
+- Select branch: `main`
+- Folder: `/root`
+- Save  
+Your site will be live shortly.
+
+---
+
+## 📸 Screenshots
+(Add screenshots here once available)
+
+---
+
+## 📌 Future Improvements
+- Add multilingual support (Estonian + English)  
+- Add interactive educational modules  
+- Add CMS‑friendly content structure  
+- Improve animations and transitions  
+
+---
+
+## 👤 Author
+**Aksel Müür**  
+Junior Web Developer – Tartu, Estonia  
+- GitHub: https://github.com/AkselMuur  
+- LinkedIn: https://www.linkedin.com/in/aksel-müür-a216a7313/  
